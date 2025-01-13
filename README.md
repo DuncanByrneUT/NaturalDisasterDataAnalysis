@@ -1,3 +1,6 @@
+# Description
+I analyzed the US Natural Disaster Declarations dataset from Kaggle using Python, focusing on data visualization with pandas, matplotlib, and seaborn. I explored disaster frequency by year, state, and type, along with correlations between disaster types and their durations, using various graphical representations like heatmaps and box plots to gain insights into disaster patterns and impacts.
+
 # Running the Script
 
 To execute this project's Python script for analyzing US Natural Disaster Declarations, follow these steps:
