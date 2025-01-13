@@ -41,3 +41,23 @@ plt.ylabel('Number of Disasters')
 plt.show()
 
 # most affected by the disasters
+states_affected = df['state'].value_counts()
+plt.figure(figsize=(15,6))
+states_affected.plot(kind='bar')
+plt.title("Number of Disasters by State")
+plt.xlabel('State')
+plt.ylabel('Count')
+plt.xticks(rotation=90)
+plt.show()
+
+# disaater types and their duration
+df['duration'] = (df['incident_end_date'] - df['incident_begin_date']).dt.days
+sns.boxplot(x='incident_type', y='duration', data=df)
+plt.xticks(rotation=90)
+plt.title('Duration of Disasters by Type')
+plt.xlabel('Disaster Types')
+plt.ylabel('Duration (Days)')
+plt.show()
+
+# disaster heat map
+
