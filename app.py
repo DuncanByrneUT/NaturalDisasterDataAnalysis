@@ -2,7 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from pandas import pivot
 
 # load our csv file
 df = pd.read_csv('CSV/archivenaturaldisaster/us_disaster_declarations.csv')
@@ -60,4 +60,10 @@ plt.ylabel('Duration (Days)')
 plt.show()
 
 # disaster heat map
-
+pivot_table = pd.pivot_table(df, values='declaration_number', index='state', columns='incident_type', aggfunc='count', fill_value=0)
+plt.figure(figsize=(20, 10))
+sns.heatmap(pivot_table, annot=False, cmap='YlOrRd')
+plt.title('Disaster Type by State')
+plt.xlabel('Disaster Type')
+plt.ylabel('State')
+plt.show()
